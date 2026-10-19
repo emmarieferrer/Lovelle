@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovelle · My List</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body class="font-poppins bg-[#0b0b0f] text-white overflow-x-hidden leading-relaxed">
+
+    <header id="mainHeader" class="fixed top-0 left-0 right-0 z-[1000] py-4 bg-gradient-to-b from-black/90 to-transparent">
+        <div class="max-w-[1300px] mx-auto px-6 relative">
+            <nav class="flex items-center justify-between gap-8">
+                <a href="index.html" class="flex items-center gap-2 text-[1.6rem] font-extrabold text-[#e50914]"><i class="fa-solid fa-play text-2xl"></i><span>Lovelle</span></a>
+                <ul class="hidden lg:flex items-center gap-2" id="navMenu">
+                    <li><a href="index.html" class="px-4 py-2 text-[0.95rem] font-medium text-gray-300 hover:text-white rounded-md transition-colors">Home</a></li>
+                    <li><a href="movies.html" class="px-4 py-2 text-[0.95rem] font-medium text-gray-300 hover:text-white rounded-md transition-colors">Movies</a></li>
+                    <li><a href="tvshows.html" class="px-4 py-2 text-[0.95rem] font-medium text-gray-300 hover:text-white rounded-md transition-colors">TV Shows</a></li>
+                    <li><a href="mylist.html" class="px-4 py-2 text-[0.95rem] font-medium text-white font-semibold rounded-md relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-5 after:h-0.5 after:bg-[#e50914] after:rounded">My List</a></li>
+                    <li><a href="contact.html" class="px-4 py-2 text-[0.95rem] font-medium text-gray-300 hover:text-white rounded-md transition-colors">Contact</a></li>
+                </ul>
+                <div class="flex items-center gap-4">
+                    <button class="lg:hidden w-10 h-10 flex items-center justify-center text-white text-xl" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-[140px] pb-16">
+        <div class="max-w-[1300px] mx-auto px-6">
+            <div class="mb-10">
+                <h1 class="text-[2.4rem] font-bold flex items-center gap-2.5"><i class="fa-solid fa-bookmark text-[#e50914]"></i> My List</h1>
+                <p class="text-gray-400 text-[0.95rem] mt-2">Rom-coms you've saved for later. Click the trash icon to remove.</p>
+            </div>
+
+            <!-- DYNAMIC GRID -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6" id="myListGrid">
+                <!-- Ang mga cards dito ay dynamic na nire-render mula sa localStorage -->
+            </div>
+
+            <!-- EMPTY STATE -->
+            <div id="listEmpty" class="hidden text-center py-20 text-gray-500">
+                <i class="fa-solid fa-bookmark text-5xl mb-4 block text-[#2a2a35]"></i>
+                <h3 class="text-xl text-white mb-2">Your list is empty</h3>
+                <p class="mb-6">Start adding rom-coms you'd like to watch later.</p>
+                <div class="flex items-center justify-center gap-4 flex-wrap">
+                    <a href="movies.html" class="inline-flex items-center gap-2 bg-[#e50914] text-white font-semibold px-6 py-3 rounded-md hover:bg-[#b20710] transition">
+                        <i class="fa-solid fa-film"></i> Browse Movies
+                    </a>
+                    <a href="tvshows.html" class="inline-flex items-center gap-2 bg-transparent border-2 border-[#2a2a35] text-white font-semibold px-6 py-3 rounded-md hover:border-[#e50914] hover:text-[#e50914] transition">
+                        <i class="fa-solid fa-tv"></i> Browse TV Shows
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#16161d] border-t border-[#2a2a35] py-16 mt-20">
+        <div class="max-w-[1400px] mx-auto px-6 text-center text-sm text-gray-500">
+            © 2026 Lovelle · Rom-com Collection · All Rights Reserved
+        </div>
+    </footer>
+
+    <!-- MODAL (Walang "+ My List" button) -->
+    <div id="mediaModal" class="fixed inset-0 bg-black/85 flex items-center justify-center z-[2000] p-4 md:p-8 opacity-0 invisible transition-all backdrop-blur-md">
+        <div class="modal-box bg-[#1f1f2a] rounded-2xl w-full max-w-[950px] max-h-[90vh] relative scale-90 transition-all shadow-2xl overflow-hidden">
+
+            <button class="modal-close absolute top-3 right-3 md:top-4 md:right-4 w-10 h-10 rounded-full bg-black/70 text-white flex items-center justify-center z-20 hover:bg-[#e50914] transition-all">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex flex-col md:flex-row max-h-[90vh]">
+
+                <div class="w-full md:w-[38%] flex-shrink-0 bg-[#16161d]">
+                    <img id="modalImg" src="" alt=""
+                         class="w-full h-full max-h-[45vh] md:max-h-[90vh] object-contain md:object-cover">
+                </div>
+
+                <div class="flex-1 p-6 md:p-8 overflow-y-auto">
+                    <h2 id="modalTitle" class="text-2xl md:text-3xl font-extrabold text-white mb-3 pr-10"></h2>
+
+                    <div class="flex flex-wrap items-center gap-3 md:gap-4 text-[0.85rem] md:text-[0.9rem] text-gray-400 mb-4">
+                        <span class="text-[#ffb400] font-semibold flex items-center gap-1" id="modalRating"></span>
+                        <span id="modalYear"></span>
+                        <span id="modalDuration"></span>
+                    </div>
+
+                    <div id="modalGenres" class="flex flex-wrap gap-2 mb-5"></div>
+
+                    <p id="modalDesc" class="text-sm md:text-base text-gray-300 leading-relaxed mb-4"></p>
+
+                    <p id="modalCast" class="text-sm md:text-base text-gray-400 leading-relaxed mb-6"></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

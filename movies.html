@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovelle · Movies</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+
+</head>
+<body class="font-poppins bg-[#0b0b0f] text-white overflow-x-hidden leading-relaxed">
+
+    <header id="mainHeader" class="fixed top-0 left-0 right-0 z-[1000] py-4 bg-gradient-to-b from-black/90 to-transparent">
+        <div class="max-w-[1300px] mx-auto px-6 relative">
+            <nav class="flex items-center justify-between gap-8">
+                <a href="index.html" class="flex items-center gap-2 text-[1.6rem] font-extrabold text-[#e50914]"><i class="fa-solid fa-play text-2xl"></i><span>Lovelle</span></a>
+                <ul class="hidden lg:flex items-center gap-2" id="navMenu">
+                    <li><a href="index.html" class="px-4 py-2 text-[0.95rem] font-medium text-gray-300 hover:text-white rounded-md transition-colors">Home</a></li>
+                    <li><a href="movies.html" class="px-4 py-2 text-[0.95rem] font-medium text-white font-semibold rounded-md relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-5 after:h-0.5 after:bg-[#e50914] after:rounded">Movies</a></li>
+                    <li><a href="tvshows.html" class="px-4 py-2 text-[0.95rem] font-medium text-gray-300 hover:text-white rounded-md transition-colors">TV Shows</a></li>
+                    <li><a href="mylist.html" class="px-4 py-2 text-[0.95rem] font-medium text-gray-300 hover:text-white rounded-md transition-colors">My List</a></li>
+                    <li><a href="contact.html" class="px-4 py-2 text-[0.95rem] font-medium text-gray-300 hover:text-white rounded-md transition-colors">Contact</a></li>
+                </ul>
+                <div class="flex items-center gap-4">
+                    <button class="lg:hidden w-10 h-10 flex items-center justify-center text-white text-xl" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="pt-[140px] pb-16">
+        <div class="max-w-[1300px] mx-auto px-6">
+            <div class="flex flex-col items-start mb-8">
+                <h2 class="text-[2.4rem] font-bold flex items-center gap-2.5 text-white"><i class="fa-solid fa-film text-[#e50914]"></i> Movies</h2>
+                <p class="text-gray-400 text-[0.95rem] mt-2">Discover and stream the latest rom-coms and timeless love stories.</p>
+            </div>
+
+            <div class="w-full max-w-[600px] md:max-w-[800px] lg:max-w-[1000px] mx-auto mb-10 relative">
+                <i class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-[#e50914]"></i>
+                <input type="text" id="searchInput" placeholder="Search movies by title..." class="w-full pl-12 pr-5 py-3.5 bg-[#16161d] border-2 border-[#2a2a35] rounded-full text-white text-base outline-none focus:border-[#e50914] transition-colors placeholder-gray-500">
+            </div>
+
+            <div class="flex gap-2.5 overflow-x-auto no-scrollbar pb-2 mb-8">
+                <button class="genre-btn px-5 py-2 rounded-full text-[0.9rem] font-medium whitespace-nowrap transition-all border-2" data-genre="all">All</button>
+                <button class="genre-btn px-5 py-2 rounded-full text-[0.9rem] font-medium whitespace-nowrap transition-all border-2" data-genre="romcom">Rom-Com</button>
+                <button class="genre-btn px-5 py-2 rounded-full text-[0.9rem] font-medium whitespace-nowrap transition-all border-2" data-genre="comedy">Comedy</button>
+                <button class="genre-btn px-5 py-2 rounded-full text-[0.9rem] font-medium whitespace-nowrap transition-all border-2" data-genre="drama">Drama</button>
+            </div>
+
+            <div id="mediaGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- 1. When Harry Met Sally -->
+                <div class="media-card cursor-pointer group transition-transform hover:-translate-y-1.5" data-title="When Harry Met Sally…" data-genre="romcom, comedy" data-year="1989" data-duration="1h 36m" data-rating="7.7" data-img="images/When Harry Met Sally.jpg" data-desc="Harry and Sally meet by chance and spend years debating whether men and women can ever truly be just friends." data-cast="Billy Crystal, Meg Ryan, Carrie Fisher">
+                    <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-[#16161d]">
+                        <img src="images/When Harry Met Sally.jpg" alt="When Harry Met Sally…" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-2.5 right-2.5 bg-black/75 text-[#ffb400] text-xs font-semibold px-2.5 py-1 rounded-md flex items-center gap-1 backdrop-blur-sm"><i class="fa-solid fa-star"></i> 7.7</span>
+                    </div>
+                    <div class="p-3"><h3 class="text-base font-semibold text-white mb-1">When Harry Met Sally…</h3><p class="text-[0.85rem] text-gray-500">1989 · Rom-Com</p></div>
+                </div>
+                <!-- 2. Pretty Woman -->
+                <div class="media-card cursor-pointer group transition-transform hover:-translate-y-1.5" data-title="Pretty Woman" data-genre="romcom, comedy" data-year="1990" data-duration="1h 59m" data-rating="7.0" data-img="images/Pretty Woman.jpg" data-desc="A wealthy businessman hires a spirited Hollywood sex worker to accompany him to social events for a week." data-cast="Julia Roberts, Richard Gere, Jason Alexander">
+                    <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-[#16161d]">
+                        <img src="images/Pretty Woman.jpg" alt="Pretty Woman" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-2.5 right-2.5 bg-black/75 text-[#ffb400] text-xs font-semibold px-2.5 py-1 rounded-md flex items-center gap-1 backdrop-blur-sm"><i class="fa-solid fa-star"></i> 7.0</span>
+                    </div>
+                    <div class="p-3"><h3 class="text-base font-semibold text-white mb-1">Pretty Woman</h3><p class="text-[0.85rem] text-gray-500">1990 · Rom-Com</p></div>
+                </div>
+                <!-- 3. Sleepless in Seattle -->
+                <div class="media-card cursor-pointer group transition-transform hover:-translate-y-1.5" data-title="Sleepless in Seattle" data-genre="romcom, drama" data-year="1993" data-duration="1h 45m" data-rating="6.8" data-img="images/sleepless in seattle.jpg" data-desc="A widowed father's heartfelt radio confession captivates a woman across the country." data-cast="Tom Hanks, Meg Ryan, Bill Pullman">
+                    <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-[#16161d]">
+                        <img src="images/sleepless in seattle.jpg" alt="Sleepless in Seattle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-2.5 right-2.5 bg-black/75 text-[#ffb400] text-xs font-semibold px-2.5 py-1 rounded-md flex items-center gap-1 backdrop-blur-sm"><i class="fa-solid fa-star"></i> 6.8</span>
+                    </div>
+                    <div class="p-3"><h3 class="text-base font-semibold text-white mb-1">Sleepless in Seattle</h3><p class="text-[0.85rem] text-gray-500">1993 · Rom-Com</p></div>
+                </div>
+                <!-- 4. Notting Hill -->
+                <div class="media-card cursor-pointer group transition-transform hover:-translate-y-1.5" data-title="Notting Hill" data-genre="romcom, comedy" data-year="1999" data-duration="2h 04m" data-rating="7.2" data-img="images/Notting Hill.jpg" data-desc="An ordinary British bookshop owner crosses paths with the world's most famous actress." data-cast="Julia Roberts, Hugh Grant, Rhys Ifans">
+                    <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-[#16161d]">
+                        <img src="images/Notting Hill.jpg" alt="Notting Hill" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-2.5 right-2.5 bg-black/75 text-[#ffb400] text-xs font-semibold px-2.5 py-1 rounded-md flex items-center gap-1 backdrop-blur-sm"><i class="fa-solid fa-star"></i> 7.2</span>
+                    </div>
+                    <div class="p-3"><h3 class="text-base font-semibold text-white mb-1">Notting Hill</h3><p class="text-[0.85rem] text-gray-500">1999 · Rom-Com</p></div>
+                </div>
+                <!-- 5. 10 Things I Hate About You -->
+                <div class="media-card cursor-pointer group transition-transform hover:-translate-y-1.5" data-title="10 Things I Hate About You" data-genre="romcom, teen" data-year="1999" data-duration="1h 37m" data-rating="7.3" data-img="images/10 things i hate about you.jpg" data-desc="A high school bad boy is bribed to date the rebellious older sister of the most popular girl in school." data-cast="Heath Ledger, Julia Stiles, Joseph Gordon-Levitt">
+                    <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-[#16161d]">
+                        <img src="images/10 things i hate about you.jpg" alt="10 Things I Hate About You" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-2.5 right-2.5 bg-black/75 text-[#ffb400] text-xs font-semibold px-2.5 py-1 rounded-md flex items-center gap-1 backdrop-blur-sm"><i class="fa-solid fa-star"></i> 7.3</span>
+                    </div>
+                    <div class="p-3"><h3 class="text-base font-semibold text-white mb-1">10 Things I Hate About You</h3><p class="text-[0.85rem] text-gray-500">1999 · Rom-Com</p></div>
+                </div>
+                <!-- 6. You've Got Mail -->
+                <div class="media-card cursor-pointer group transition-transform hover:-translate-y-1.5" data-title="You've Got Mail" data-genre="romcom, comedy" data-year="1998" data-duration="1h 59m" data-rating="6.7" data-img="images/Youve got mail.jpg" data-desc="Two business rivals who despise each other in person find themselves falling for their anonymous online pen pals." data-cast="Tom Hanks, Meg Ryan, Greg Kinnear">
+                    <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-[#16161d]">
+                        <img src="images/Youve got mail.jpg" alt="You've Got Mail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-2.5 right-2.5 bg-black/75 text-[#ffb400] text-xs font-semibold px-2.5 py-1 rounded-md flex items-center gap-1 backdrop-blur-sm"><i class="fa-solid fa-star"></i> 6.7</span>
+                    </div>
+                    <div class="p-3"><h3 class="text-base font-semibold text-white mb-1">You've Got Mail</h3><p class="text-[0.85rem] text-gray-500">1998 · Rom-Com</p></div>
+                </div>
+            </div>
+
+            <div id="emptyState" class="hidden text-center py-16 text-gray-500">
+                <i class="fa-solid fa-film text-5xl mb-4 block text-[#2a2a35]"></i>
+                <h3 class="text-xl text-white mb-2">No movies found</h3>
+                <p>Try a different search term or genre.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#16161d] border-t border-[#2a2a35] pt-16 pb-6 mt-20">
+        <div class="max-w-[1300px] mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 text-[1.6rem] font-extrabold text-[#e50914] mb-4"><i class="fa-solid fa-play text-2xl"></i><span>Lovelle</span></a>
+                    <p class="text-gray-400 text-[0.9rem] leading-relaxed max-w-[320px] mb-5">Your gateway to endless entertainment. Stream thousands of movies and TV shows anytime, anywhere.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 rounded-full bg-[#1f1f2a] border border-[#2a2a35] flex items-center justify-center text-gray-400 hover:bg-[#e50914] hover:text-white hover:border-[#e50914] hover:-translate-y-1 transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-[#1f1f2a] border border-[#2a2a35] flex items-center justify-center text-gray-400 hover:bg-[#e50914] hover:text-white hover:border-[#e50914] hover:-translate-y-1 transition-all"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-[#1f1f2a] border border-[#2a2a35] flex items-center justify-center text-gray-400 hover:bg-[#e50914] hover:text-white hover:border-[#e50914] hover:-translate-y-1 transition-all"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-[#1f1f2a] border border-[#2a2a35] flex items-center justify-center text-gray-400 hover:bg-[#e50914] hover:text-white hover:border-[#e50914] hover:-translate-y-1 transition-all"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white text-base font-semibold mb-4">Browse</h4>
+                    <ul class="space-y-2.5 text-[0.9rem]">
+                        <li><a href="movies.html" class="text-gray-400 hover:text-[#e50914] transition-colors">Movies</a></li>
+                        <li><a href="tvshows.html" class="text-gray-400 hover:text-[#e50914] transition-colors">TV Shows</a></li>
+                        <li><a href="mylist.html" class="text-gray-400 hover:text-[#e50914] transition-colors">My List</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-[#e50914] transition-colors">New Releases</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-base font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2.5 text-[0.9rem]">
+                        <li><a href="#" class="text-gray-400 hover:text-[#e50914] transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-[#e50914] transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-[#e50914] transition-colors">Press</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-[#e50914] transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-base font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2.5 text-[0.9rem]">
+                        <li><a href="#" class="text-gray-400 hover:text-[#e50914] transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-[#e50914] transition-colors">Account</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-[#e50914] transition-colors">Devices</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-[#e50914] transition-colors">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-[#2a2a35] pt-6 text-center text-[0.85rem] text-gray-500">
+                © 2026 Lovelle · Rom-com Collection · All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="mediaModal" class="fixed inset-0 bg-black/85 flex items-center justify-center z-[2000] p-4 md:p-8 opacity-0 invisible transition-all backdrop-blur-md">
+        <div class="modal-box bg-[#1f1f2a] rounded-2xl w-full max-w-[950px] max-h-[90vh] relative scale-90 transition-all shadow-2xl overflow-hidden">
+
+            <button class="modal-close absolute top-3 right-3 md:top-4 md:right-4 w-10 h-10 rounded-full bg-black/70 text-white flex items-center justify-center z-20 hover:bg-[#e50914] transition-all">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex flex-col md:flex-row max-h-[90vh]">
+
+                <div class="w-full md:w-[38%] flex-shrink-0 bg-[#16161d]">
+                    <img id="modalImg" src="" alt=""
+                         class="w-full h-full max-h-[45vh] md:max-h-[90vh] object-contain md:object-cover">
+                </div>
+
+                <div class="flex-1 p-6 md:p-8 overflow-y-auto">
+                    <h2 id="modalTitle" class="text-2xl md:text-3xl font-extrabold text-white mb-3 pr-10"></h2>
+
+                    <div class="flex flex-wrap items-center gap-3 md:gap-4 text-[0.85rem] md:text-[0.9rem] text-gray-400 mb-4">
+                        <span class="text-[#ffb400] font-semibold flex items-center gap-1" id="modalRating"></span>
+                        <span id="modalYear"></span>
+                        <span id="modalDuration"></span>
+                    </div>
+
+                    <div id="modalGenres" class="flex flex-wrap gap-2 mb-5"></div>
+
+                    <p id="modalDesc" class="text-sm md:text-base text-gray-300 leading-relaxed mb-4"></p>
+
+                    <p id="modalCast" class="text-sm md:text-base text-gray-400 leading-relaxed mb-6"></p>
+
+                    <div class="flex gap-3 flex-wrap">
+                        <button class="add-to-list-btn inline-flex items-center gap-2 px-6 py-3 bg-white/20 text-white font-semibold rounded-md hover:bg-white/30 transition-all">
+                            <i class="fa-solid fa-plus"></i> My List
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

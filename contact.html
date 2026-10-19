@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovelle · Contact</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="font-poppins bg-[#0b0b0f] text-white overflow-x-hidden leading-relaxed">
+
+    <header id="mainHeader" class="fixed top-0 left-0 right-0 z-[1000] py-4 bg-gradient-to-b from-black/90 to-transparent">
+        <div class="max-w-[1300px] mx-auto px-6">
+            <nav class="flex items-center justify-between gap-8">
+                <a href="index.html" class="flex items-center gap-2 text-[1.6rem] font-extrabold text-[#e50914]"><i class="fa-solid fa-play text-2xl"></i><span>Lovelle</span></a>
+                <ul class="hidden lg:flex items-center gap-2" id="navMenu">
+                    <li><a href="index.html" class="px-4 py-2 text-[0.95rem] font-medium text-gray-300 hover:text-white rounded-md transition-colors">Home</a></li>
+                    <li><a href="movies.html" class="px-4 py-2 text-[0.95rem] font-medium text-gray-300 hover:text-white rounded-md transition-colors">Movies</a></li>
+                    <li><a href="tvshows.html" class="px-4 py-2 text-[0.95rem] font-medium text-gray-300 hover:text-white rounded-md transition-colors">TV Shows</a></li>
+                    <li><a href="mylist.html" class="px-4 py-2 text-[0.95rem] font-medium text-gray-300 hover:text-white rounded-md transition-colors">My List</a></li>
+                    <li><a href="contact.html" class="px-4 py-2 text-[0.95rem] font-medium text-white font-semibold rounded-md relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-5 after:h-0.5 after:bg-[#e50914] after:rounded">Contact</a></li>
+                </ul>
+                <div class="flex items-center gap-4">
+                    <button class="lg:hidden w-10 h-10 flex items-center justify-center text-white text-xl" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="pt-[140px] pb-16">
+        <div class="max-w-[1300px] mx-auto px-6 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 items-start">
+                <div>
+                    <h2 class="text-[2.4rem] font-bold mb-4 text-white flex items-center gap-2.5"><i class="fa-solid fa-envelope text-[#e50914]"></i> Let's Talk</h2>
+                    <p class="text-gray-400 text-[0.95rem] leading-relaxed mb-8">Have a question and a suggestion? We'd love to hear from you. Our support team typically responds within 24 hours.</p>
+                    <div class="flex gap-4 mb-6 items-start">
+                        <div class="w-12 h-12 rounded-full bg-[#16161d] border border-[#2a2a35] flex items-center justify-center text-[#e50914] flex-shrink-0"><i class="fa-solid fa-envelope"></i></div>
+                        <div><h4 class="text-white font-semibold mb-1">Email Us</h4><p class="text-gray-400 text-sm">lovelle@gmail.com</p></div>
+                    </div>
+                    <div class="flex gap-4 mb-6 items-start">
+                        <div class="w-12 h-12 rounded-full bg-[#16161d] border border-[#2a2a35] flex items-center justify-center text-[#e50914] flex-shrink-0"><i class="fa-solid fa-phone"></i></div>
+                        <div><h4 class="text-white font-semibold mb-1">Call Us</h4><p class="text-gray-400 text-sm">+63 909 598 0851</p></div>
+                    </div>
+                    <div class="flex gap-4 mb-6 items-start">
+                        <div class="w-12 h-12 rounded-full bg-[#16161d] border border-[#2a2a35] flex items-center justify-center text-[#e50914] flex-shrink-0"><i class="fa-solid fa-location-dot"></i></div>
+                        <div><h4 class="text-white font-semibold mb-1">Visit Us</h4><p class="text-gray-400 text-sm">Impig, Sipocot, Camarines Sur<br>Philippines</p></div>
+                    </div>
+                </div>
+
+                <form class="bg-[#16161d] p-9 rounded-2xl border border-[#2a2a35]" id="contactForm" novalidate>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
+                        <div class="form-group mb-5">
+                            <label class="block text-sm text-gray-400 mb-2 font-medium">Full Name</label>
+                            <input type="text" id="fullName" placeholder="Juan Dela Cruz" class="w-full px-4 py-3 bg-[#0b0b0f] border-2 border-[#2a2a35] rounded-lg text-white text-sm outline-none focus:border-[#e50914] transition-colors">
+                            <p class="error-msg text-red-400 text-xs mt-1.5 hidden">Please enter your name (min 2 characters).</p>
+                        </div>
+                        <div class="form-group mb-5">
+                            <label class="block text-sm text-gray-400 mb-2 font-medium">Email</label>
+                            <input type="email" id="email" placeholder="you@example.com" class="w-full px-4 py-3 bg-[#0b0b0f] border-2 border-[#2a2a35] rounded-lg text-white text-sm outline-none focus:border-[#e50914] transition-colors">
+                            <p class="error-msg text-red-400 text-xs mt-1.5 hidden">Please enter a valid email address.</p>
+                        </div>
+                    </div>
+                    <div class="form-group mb-5">
+                        <label class="block text-sm text-gray-400 mb-2 font-medium">Subject</label>
+                        <input type="text" id="subject" placeholder="What is this about?" class="w-full px-4 py-3 bg-[#0b0b0f] border-2 border-[#2a2a35] rounded-lg text-white text-sm outline-none focus:border-[#e50914] transition-colors">
+                        <p class="error-msg text-red-400 text-xs mt-1.5 hidden">Subject must be at least 3 characters.</p>
+                    </div>
+                    <div class="form-group mb-5">
+                        <label class="block text-sm text-gray-400 mb-2 font-medium">Message</label>
+                        <textarea id="message" rows="6" placeholder="Tell us how we can help..." class="w-full px-4 py-3 bg-[#0b0b0f] border-2 border-[#2a2a35] rounded-lg text-white text-sm outline-none focus:border-[#e50914] transition-colors resize-y"></textarea>
+                        <p class="error-msg text-red-400 text-xs mt-1.5 hidden">Message must be at least 10 characters.</p>
+                    </div>
+                    <button type="submit" class="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#e50914] text-white font-semibold rounded-lg hover:bg-[#b20710] transition-all">
+                        <i class="fa-solid fa-paper-plane"></i> Send Message
+                    </button>
+                    <div class="form-success hidden bg-green-500/15 text-green-400 p-4 rounded-lg mt-5 border-l-4 border-green-500 text-sm" id="formSuccess">
+                        <i class="fa-solid fa-check-circle"></i> Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
+                    </div>
+                </form>
+            </div>
+
+                       <div class="max-w-[900px] mx-auto mt-20">
+                <h2 class="text-center text-2xl font-bold text-white mb-8">
+                    <i class="fa-solid fa-circle-question text-[#e50914]"></i> Frequently Asked Questions
+                </h2>
+                <div class="accordion-item bg-[#16161d] border border-[#2a2a35] rounded-xl mb-3 overflow-hidden">
+                    <button class="accordion-header w-full p-5 text-left text-white font-semibold flex justify-between items-center gap-4 hover:text-[#e50914] transition-colors">
+                        Is Lovelle a streaming platform?
+                        <i class="fa-solid fa-chevron-down text-[#e50914] text-sm transition-transform"></i>
+                    </button>
+                    <div class="accordion-body max-h-0 overflow-hidden px-5 text-gray-400 text-sm leading-relaxed transition-all duration-300">
+                        <div class="pb-5">No, Lovelle is a curated collection of romantic comedies and love stories. We help you discover, explore, and organize your favorite rom-coms — we do not host or stream the actual movies and TV shows.</div>
+                    </div>
+                </div>
+                <div class="accordion-item bg-[#16161d] border border-[#2a2a35] rounded-xl mb-3 overflow-hidden">
+                    <button class="accordion-header w-full p-5 text-left text-white font-semibold flex justify-between items-center gap-4 hover:text-[#e50914] transition-colors">
+                        How do I add a movie or show to My List?
+                        <i class="fa-solid fa-chevron-down text-[#e50914] text-sm transition-transform"></i>
+                    </button>
+                    <div class="accordion-body max-h-0 overflow-hidden px-5 text-gray-400 text-sm leading-relaxed transition-all duration-300">
+                        <div class="pb-5">Simply click on any movie or TV show card to open its details, then hit the "My List" button. You can view everything you've saved by visiting the My List page anytime.</div>
+                    </div>
+                </div>
+                <div class="accordion-item bg-[#16161d] border border-[#2a2a35] rounded-xl mb-3 overflow-hidden">
+                    <button class="accordion-header w-full p-5 text-left text-white font-semibold flex justify-between items-center gap-4 hover:text-[#e50914] transition-colors">
+                        How often do you add new rom-coms to the collection?
+                        <i class="fa-solid fa-chevron-down text-[#e50914] text-sm transition-transform"></i>
+                    </button>
+                    <div class="accordion-body max-h-0 overflow-hidden px-5 text-gray-400 text-sm leading-relaxed transition-all duration-300">
+                        <div class="pb-5">We update our collection regularly with both timeless classics and modern romantic comedies. New titles are added every week, so there's always something new to fall in love with.</div>
+                    </div>
+                </div>
+                <div class="accordion-item bg-[#16161d] border border-[#2a2a35] rounded-xl mb-3 overflow-hidden">
+                    <button class="accordion-header w-full p-5 text-left text-white font-semibold flex justify-between items-center gap-4 hover:text-[#e50914] transition-colors">
+                        Can I search for a specific movie or genre?
+                        <i class="fa-solid fa-chevron-down text-[#e50914] text-sm transition-transform"></i>
+                    </button>
+                    <div class="accordion-body max-h-0 overflow-hidden px-5 text-gray-400 text-sm leading-relaxed transition-all duration-300">
+                        <div class="pb-5">Yes! Use the search bar on the Movies or TV Shows page to find titles by name. You can also filter by genre — Rom-Com, Comedy, or Drama — to narrow down your search.</div>
+                    </div>
+                </div>
+                <div class="accordion-item bg-[#16161d] border border-[#2a2a35] rounded-xl mb-3 overflow-hidden">
+                    <button class="accordion-header w-full p-5 text-left text-white font-semibold flex justify-between items-center gap-4 hover:text-[#e50914] transition-colors">
+                        I have a suggestion for a rom-com you should feature. How can I reach you?
+                        <i class="fa-solid fa-chevron-down text-[#e50914] text-sm transition-transform"></i>
+                    </button>
+                    <div class="accordion-body max-h-0 overflow-hidden px-5 text-gray-400 text-sm leading-relaxed transition-all duration-300">
+                        <div class="pb-5">We'd love to hear it! Fill out the contact form above with the subject "Suggestion" and let us know which title you'd like to see. We review every recommendation from our community.</div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <footer class="bg-[#16161d] border-t border-[#2a2a35] py-16 mt-20">
+        <div class="max-w-[1400px] mx-auto px-6 text-center text-sm text-gray-500">
+            © 2026 Lovelle · Rom-com Collection · All Rights Reserved
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
